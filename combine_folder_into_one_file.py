@@ -8,11 +8,11 @@ import random
 
 current_path = pathlib.Path(__file__).parent
 
-
-def main():
-    clip_amount = 30
-    input_folder = current_path.joinpath("data", "secrete", "secrete", "output_folder")
-    output_file = current_path.joinpath("data", "secrete", "secrete", "intro_animation.png")
+def combine_animation_files(clip_amount = 35,
+                            input_folder= None,
+                            output_file=None,
+                            min_delay=1000,
+                            max_delay=10000):
     animated_png_files = [video_file_path for video_file_path in input_folder.glob("*.png")]
 
     files_to_combine = []
@@ -27,9 +27,6 @@ def main():
 
     # your code here
     # ---------------------------
-    # Parameters for delay
-    min_delay = 1000  # ms
-    max_delay = 10000  # ms
 
     # Load all frames from all files and track durations
     all_frames = []
@@ -71,6 +68,25 @@ def main():
             format="PNG"
         )
         print(f"Combined APNG saved to {output_file}")
+
+
+def main():
+    clip_amount = 35
+    input_folder = current_path.joinpath("data", "secrete", "secrete", "output_folder")
+    output_folder = current_path.joinpath("data", "secrete", "secrete")
+    #output_file = current_path.joinpath("data", "secrete", "secrete", "intro_animation.png")
+    min_delay = 1000  # ms
+    max_delay = 10000  # ms
+    for i in range(1, 11):
+        output_file = output_folder.joinpath(f"intro_animation_{str(i).zfill(3)}.png")
+        print("Working on:", output_file)
+        combine_animation_files(
+            clip_amount=clip_amount,
+            input_folder=input_folder,
+            output_file=output_file,
+            min_delay=min_delay,
+            max_delay=max_delay
+        )
 
 
 
