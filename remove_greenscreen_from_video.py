@@ -119,7 +119,7 @@ def rgba_to_gif_frame(rgba_frame: Image.Image, alpha_cutoff=128):
     # Look for black in palette
     marker_index = None
     for i in range(256):
-        r, g, b = palette[3*i:3*i+3]
+        r, g, b = palette[3 * i:3 * i + 3]
         if (r, g, b) == (0, 0, 0):
             marker_index = i
             break
@@ -133,11 +133,18 @@ def rgba_to_gif_frame(rgba_frame: Image.Image, alpha_cutoff=128):
     return pal
 
 
-def save_frames(output_folder, clip, times, shrink_pixels=0, feather=5, save_images=False) -> list:
+def save_frames(output_folder,
+                clip,
+                times,
+                lower,
+                upper,
+                shrink_pixels=0,
+                feather=5,
+                save_images=False) -> list:
     frames = []
     for i, t in enumerate(times):
         frame = clip.get_frame(t)
-        rgba = apply_mask(frame)
+        rgba = apply_mask(frame, lower=lower, upper=upper)
 
         # expand transparent area (shrink the object)
         if shrink_pixels > 0 or (feather and feather > 0):
@@ -156,12 +163,14 @@ def save_frames(output_folder, clip, times, shrink_pixels=0, feather=5, save_ima
 
 def handle_video_file(input_path,
                       output_path,
+                      lower,
+                      upper,
                       save_images=False,
                       fps_out=15,
                       shrink_pixels=1,
                       feather=1,
                       sape_png=False,
-                      save_gif=True):
+                      save_gif=True,):
     input_file_name = input_path.stem
     output_folder = output_path.joinpath(input_file_name)
     if output_folder.exists():
@@ -177,7 +186,9 @@ def handle_video_file(input_path,
                          times=times,
                          shrink_pixels=shrink_pixels,
                          feather=feather,
-                         save_images=save_images)
+                         save_images=save_images,
+                         lower=lower,
+                         upper=upper)
     if sape_png:
         frames[0].save(
             output_path.joinpath(f"{input_file_name}.png"),
@@ -216,6 +227,8 @@ def handle_single_file():
     # ADJUST THESE:
     shrink_pixels = 1  # how many pixels to remove around the object
     feather = 1  # softness of the new edge
+    lower = (37, 40, 40)  # for removing the color
+    upper = (85, 255, 255)  # for removing the color
 
     # delete old folder if it exists
     if output_folder.exists():
@@ -226,11 +239,15 @@ def handle_single_file():
                       save_images=False,
                       fps_out=fps_out,
                       shrink_pixels=shrink_pixels,
-                      feather=feather)
+                      feather=feather,
+                      lower=lower,
+                      upper=upper)
 
 
 def handle_folder():
     fps_out = 15
+    lower = (37, 40, 40)  # for removing the color
+    upper = (85, 255, 255)  # for removing the color
     shrink_pixels = 1  # how many pixels to remove around the object
     feather = 1  # softness of the new edge
 
@@ -249,10 +266,13 @@ def handle_folder():
                           shrink_pixels=shrink_pixels,
                           feather=feather,
                           sape_png=True,
-                          save_gif=True)
+                          save_gif=True,
+                          lower=lower,
+                          upper=upper)
 
 
 def main():
+    # handle_single_file()
     handle_folder()
 
 
