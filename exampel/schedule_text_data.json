@@ -1,0 +1,576 @@
+{
+  "time_zone": {
+    "name": "UTC",
+    "number": 2
+  },
+  "start_date_time": "20.10.2025",
+  "time_zones_to_generate": [
+    {
+      "name": "UTC",
+      "number": 0
+    },
+    {
+      "name": "EST",
+      "number": 0
+    }
+  ],
+  "base_image": "schedule.png",
+  "days": [
+    {
+      "start_time": "04:00 pm",
+      "end_time": "08:00 pm",
+      "day_nr": 0,
+      "info_items": [
+        {
+          "box_start": {
+            "x": 940,
+            "y": 20
+          },
+          "box_end": {
+            "x": 1050,
+            "y": 129
+          },
+          "bg_picture_path": "X.png",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": []
+        },
+        {
+          "box_start": {
+            "x": 1060,
+            "y": 20
+          },
+          "box_end": {
+            "x": 1170,
+            "y": 129
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 50,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{day_name_short}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1180,
+            "y": 20
+          },
+          "box_end": {
+            "x": 1342,
+            "y": 129
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1352,
+            "y": 20
+          },
+          "box_end": {
+            "x": 1890,
+            "y": 129
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        }
+      ]
+    },
+    {
+      "start_time": "04:00 pm",
+      "end_time": "08:00 pm",
+      "day_nr": 1,
+      "info_items": [
+        {
+          "box_start": {
+            "x": 920,
+            "y": 150
+          },
+          "box_end": {
+            "x": 1030,
+            "y": 259
+          },
+          "bg_picture_path": "X.png",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": []
+        },
+        {
+          "box_start": {
+            "x": 1040,
+            "y": 150
+          },
+          "box_end": {
+            "x": 1150,
+            "y": 259
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 50,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{day_name_short}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1160,
+            "y": 150
+          },
+          "box_end": {
+            "x": 1322,
+            "y": 259
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1332,
+            "y": 150
+          },
+          "box_end": {
+            "x": 1870,
+            "y": 259
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        }
+      ]
+    },
+    {
+      "start_time": "04:00 pm",
+      "end_time": "08:00 pm",
+      "day_nr": 2,
+      "info_items": [
+        {
+          "box_start": {
+            "x": 940,
+            "y": 280
+          },
+          "box_end": {
+            "x": 1050,
+            "y": 389
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": []
+        },
+        {
+          "box_start": {
+            "x": 1060,
+            "y": 280
+          },
+          "box_end": {
+            "x": 1170,
+            "y": 389
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 50,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{day_name_short}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1180,
+            "y": 280
+          },
+          "box_end": {
+            "x": 1342,
+            "y": 389
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{start_time}",
+            "to",
+            "{end_time}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1352,
+            "y": 280
+          },
+          "box_end": {
+            "x": 1890,
+            "y": 389
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "colab stream with Shquish",
+            "Among Us",
+            "We try to do some stuff"
+          ]
+        }
+      ]
+    },
+    {
+      "start_time": "04:00 pm",
+      "end_time": "08:00 pm",
+      "day_nr": 3,
+      "info_items": [
+        {
+          "box_start": {
+            "x": 920,
+            "y": 410
+          },
+          "box_end": {
+            "x": 1030,
+            "y": 519
+          },
+          "bg_picture_path": "X.png",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": []
+        },
+        {
+          "box_start": {
+            "x": 1040,
+            "y": 410
+          },
+          "box_end": {
+            "x": 1150,
+            "y": 519
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 50,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{day_name_short}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1160,
+            "y": 410
+          },
+          "box_end": {
+            "x": 1322,
+            "y": 519
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1332,
+            "y": 410
+          },
+          "box_end": {
+            "x": 1870,
+            "y": 519
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        }
+      ]
+    },
+    {
+      "start_time": "04:00 pm",
+      "end_time": "08:00 pm",
+      "day_nr": 4,
+      "info_items": [
+        {
+          "box_start": {
+            "x": 940,
+            "y": 540
+          },
+          "box_end": {
+            "x": 1050,
+            "y": 649
+          },
+          "bg_picture_path": "X.png",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": []
+        },
+        {
+          "box_start": {
+            "x": 1060,
+            "y": 540
+          },
+          "box_end": {
+            "x": 1170,
+            "y": 649
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 50,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{day_name_short}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1180,
+            "y": 540
+          },
+          "box_end": {
+            "x": 1342,
+            "y": 649
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1352,
+            "y": 540
+          },
+          "box_end": {
+            "x": 1890,
+            "y": 649
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        }
+      ]
+    },
+    {
+      "start_time": "04:00 pm",
+      "end_time": "08:00 pm",
+      "day_nr": 5,
+      "info_items": [
+        {
+          "box_start": {
+            "x": 920,
+            "y": 670
+          },
+          "box_end": {
+            "x": 1030,
+            "y": 779
+          },
+          "bg_picture_path": "X.png",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": []
+        },
+        {
+          "box_start": {
+            "x": 1040,
+            "y": 670
+          },
+          "box_end": {
+            "x": 1150,
+            "y": 779
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 50,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{day_name_short}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1160,
+            "y": 670
+          },
+          "box_end": {
+            "x": 1322,
+            "y": 779
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1332,
+            "y": 670
+          },
+          "box_end": {
+            "x": 1870,
+            "y": 779
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+          ]
+        }
+      ]
+    },
+    {
+      "start_time": "04:00 pm",
+      "end_time": "08:00 pm",
+      "day_nr": 6,
+      "info_items": [
+        {
+          "box_start": {
+            "x": 940,
+            "y": 800
+          },
+          "box_end": {
+            "x": 1050,
+            "y": 909
+          },
+          "bg_picture_path": "OW_image.jpg",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": []
+        },
+        {
+          "box_start": {
+            "x": 1060,
+            "y": 800
+          },
+          "box_end": {
+            "x": 1170,
+            "y": 909
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 50,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{day_name_short}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1180,
+            "y": 800
+          },
+          "box_end": {
+            "x": 1342,
+            "y": 909
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "{start_time}",
+            "to",
+            "{end_time}"
+          ]
+        },
+        {
+          "box_start": {
+            "x": 1352,
+            "y": 800
+          },
+          "box_end": {
+            "x": 1890,
+            "y": 909
+          },
+          "bg_picture_path": "",
+          "color": "#ffffffff",
+          "size": 25,
+          "align": "c",
+          "valign": "c",
+          "info_text": [
+            "colab stream with Shquish",
+            "Among Us",
+            "We try to do some stuff"
+          ]
+        }
+      ]
+    }
+  ],
+  "time_zone_text": {
+    "box_start": {
+      "x": 940,
+      "y": 930
+    },
+    "box_end": {
+      "x": 1880,
+      "y": 1060
+    },
+    "bg_picture_path": "",
+    "color": "#ffffffff",
+    "size": 50,
+    "day_nr": 6,
+    "align": "c",
+    "valign": "c",
+    "info_text": [
+      "{time_zone}   {start_date} - {end_date}"
+    ]
+  }
+}
