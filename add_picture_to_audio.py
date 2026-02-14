@@ -97,23 +97,69 @@ def main():
 
         # Load audio using moviepy (this avoids pydub/audioop issues)
         audio = AudioFileClip(str(input_audio_file))
-        duration = audio.duration
+        duration = getattr(audio, 'duration', None)
+        print(f"Loaded audio duration: {duration}")
+        if duration is None or duration <= 0:
+            print("ERROR: audio duration is invalid or zero. Skipping file.")
+            audio.close()
+            continue
 
         # Create a still-image video clip for the audio duration
         try:
             # try to construct with duration kw (works on some builds)
             clip = ImageClip(str(input_image_file), duration=duration)  # type: ignore
-        except TypeError:
+        except Exception:
             # fallback: construct without duration then set it
             clip = ImageClip(str(input_image_file))  # type: ignore
-            clip = set_clip_duration(clip, duration)
+            try:
+                clip = set_clip_duration(clip, duration)
+            except Exception as e:
+                print("Failed to set duration on ImageClip:")
+                traceback.print_exc()
+                print("Skipping this file due to incompatible MoviePy ImageClip implementation.")
+                clip.close()
+                audio.close()
+                continue
 
-        # attach audio
-        clip = clip.set_audio(audio) if hasattr(clip, 'set_audio') else clip
+        # Debug: print clip duration after setting
+        clip_dur = getattr(clip, 'duration', None)
+        print(f"ImageClip duration after setup: {clip_dur}")
+
+        # attach audio (set_audio returns a new clip in many versions)
+        if hasattr(clip, 'set_audio'):
+            clip = clip.set_audio(audio)
+        else:
+            # older/newer versions should have set_audio; this is defensive
+            try:
+                clip.audio = audio
+            except Exception:
+                print("WARNING: could not attach audio to clip via set_audio or attribute assignment.")
 
         # Write the final video file. moviepy will call ffmpeg; ensure ffmpeg is installed on the system.
         print(f"Writing video to: {output_video_file}")
-        clip.write_videofile(str(output_video_file), fps=24, codec="libx264", audio_codec="aac")
+        try:
+            # force audio=True and add '-shortest' so the output respects audio length and doesn't drop it
+            clip.write_videofile(
+                str(output_video_file),
+                fps=24,
+                codec="libx264",
+                audio=True,
+                audio_codec="aac",
+                ffmpeg_params=["-shortest"],
+            )
+        except Exception:
+            print("Failed while writing the video file:")
+            traceback.print_exc()
+        finally:
+            # close resources to ensure ffmpeg finishes writing audio streams
+            try:
+                clip.close()
+            except Exception:
+                pass
+            try:
+                audio.close()
+            except Exception:
+                pass
 
 
 if __name__ == "__main__":
